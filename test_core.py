@@ -3,7 +3,7 @@
 import pandas as pd  # 用于构造边界测试样本。
 import pytest  # 使用断言测试输入校验。
 
-from src.robotlog_core import make_demo, normalize_frame, analyze, report_json  # 导入待验证函数。
+from robotlog_core import make_demo, normalize_frame, analyze, report_json  # 导入待验证函数。
 
 
 def test_clean_data_has_no_events():  # 检查正常合成数据不会触发明显误报。
