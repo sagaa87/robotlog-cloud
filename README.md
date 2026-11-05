@@ -14,16 +14,16 @@
 
 ```
 app.py                     # Streamlit入口
-src/robotlog_core.py       # 数据规范化、规则诊断、报告导出
-src/rosbag_import.py       # 可选ROS1 bag日志解析
+robotlog_core.py       # 数据规范化、规则诊断、报告导出
+rosbag_import.py       # 可选ROS1 bag日志解析
 requirements.txt           # 在线部署依赖
-tests/test_core.py         # 核心模块单元测试
+test_core.py         # 核心模块单元测试
 ```
 
 ## 1. 在浏览器里部署到公开链接
 
 1. 进入 https://github.com/new ，建立一个**公开仓库**（例如 `robotlog-cloud`）。
-2. 将此文件夹所有文件上传至仓库根目录，确保存在 `app.py`、`requirements.txt` 和 `src/`。
+2. 将此文件夹所有文件上传至仓库根目录，确保存在 `app.py`、`requirements.txt`、`robotlog_core.py` 和 `rosbag_import.py`。
 3. 打开 https://share.streamlit.io ，使用GitHub登录，选择 **Create app**。
 4. 选择你的仓库、分支 `main`、入口文件 `app.py`；Python可选择官方支持的3.12版本。
 5. 选择 Deploy；成功后获取属于你的 `*.streamlit.app` 网址。可以分享给招聘负责人。
