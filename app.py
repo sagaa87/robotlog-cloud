@@ -5,7 +5,7 @@ import pandas as pd  # 处理CSV输入及数据展示。
 import plotly.express as px  # 提供可缩放和悬停查看的互动图表。
 import streamlit as st  # 生成可部署的交互式网页。
 
-from src.robotlog_core import make_demo, normalize_frame, analyze, report_json  # 使用独立测试的数据分析逻辑。
+from robotlog_core import make_demo, normalize_frame, analyze, report_json  # 使用独立测试的数据分析逻辑。
 
 st.set_page_config(page_title="RobotLog Cloud", page_icon="🤖", layout="wide")  # 设置网页标题和宽屏排版。
 st.title("RobotLog Cloud｜机器人数据质量检测")  # 显示项目名称。
@@ -36,7 +36,7 @@ try:  # 处理可能由文件格式引发的用户输入错误。
             frame = pd.read_csv(io.BytesIO(uploaded.getvalue()))  # 将用户上传的CSV解析为表格。
             source_label = f"用户上传CSV：{uploaded.name}"  # 标记用户提供的数据来源。
         else:  # 其他允许的文件类型为ROS1 bag。
-            from src.rosbag_import import read_ros1_bag  # 仅在需要时加载解析器。
+            from rosbag_import import read_ros1_bag  # 仅在需要时加载解析器。
             frame = read_ros1_bag(uploaded.getvalue())  # 从ROS1文件提取传感器消息。
             source_label = f"用户上传ROS1 bag：{uploaded.name}（限制前120000条消息）"  # 明确日志读取上限。
     data = normalize_frame(frame)  # 规范化输入字段。
